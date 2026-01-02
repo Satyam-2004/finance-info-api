@@ -5,3 +5,4 @@ import yfinance as yf
 #print(data[["Close"]])
 print(yf.__version__)
 exit()
+# first commit
