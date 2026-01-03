@@ -6,3 +6,4 @@ import yfinance as yf
 print(yf.__version__)
 exit()
 # first commit
+# linux commit 
