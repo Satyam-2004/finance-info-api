@@ -1,9 +1,18 @@
-import yfinance as yf
+from fastapi import FastAPI
 
-#ticker = "AAPL"
-#data = yf.download(ticker, period="5d")
-#print(data[["Close"]])
-print(yf.__version__)
-exit()
-# first commit
-# linux commit 
+app = FastAPI()
+
+@app.get('/')
+def root():
+    return {"status": "ok"}
+
+@app.get("/stocks/{symbol}")
+def get_stock(symbol: str):
+    return {"symbol": symbol}
+
+@app.get("/stocks/{symbol}/history")
+def get_stock_history(symbol: str, period: str = "1mo"):
+    return {
+        "symbol": symbol,
+        "period" : period
+    }
