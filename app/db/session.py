@@ -4,6 +4,4 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship,
 engine = create_engine("sqlite:///mydb.db", echo=True)
 
 SessionLocal = sessionmaker(bind=engine)
-
-with SessionLocal as session:
     
